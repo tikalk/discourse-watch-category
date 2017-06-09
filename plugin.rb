@@ -23,7 +23,16 @@ module ::WatchCategory
       # "everyone" makes every user watch the listed categories
       # "everyone" => [ "announcements" ]
     }
+    WatchCategory.change_notification_pref_for_group(groups_cats, :watching)
 
+    groups_cats = {
+      "coordinating-cmte" => [ "announcements" ],
+      "representatives" => [ "announcements" ]
+    }
+    WatchCategory.change_notification_pref_for_group(groups_cats, :watching_first_post)
+  end
+
+  def self.change_notification_pref_for_group(groups_cats, pref)
     groups_cats.each do |group_name, cats|
       cats.each do |cat_slug|
 
@@ -38,21 +47,21 @@ module ::WatchCategory
         unless category.nil? || group.nil?
           if group_name == "everyone"
             User.all.each do |user|
-              watched_categories = CategoryUser.lookup(user, :watching).pluck(:category_id)
-              CategoryUser.set_notification_level_for_category(user, CategoryUser.notification_levels[:watching], category.id) unless watched_categories.include?(category.id)
+              watched_categories = CategoryUser.lookup(user, pref).pluck(:category_id)
+              CategoryUser.set_notification_level_for_category(user, CategoryUser.notification_levels[pref], category.id) unless watched_categories.include?(category.id)
             end
           else
             group.users.each do |user|
-              watched_categories = CategoryUser.lookup(user, :watching).pluck(:category_id)
-              CategoryUser.set_notification_level_for_category(user, CategoryUser.notification_levels[:watching], category.id) unless watched_categories.include?(category.id)
+              watched_categories = CategoryUser.lookup(user, pref).pluck(:category_id)
+              CategoryUser.set_notification_level_for_category(user, CategoryUser.notification_levels[pref], category.id) unless watched_categories.include?(category.id)
             end
           end
         end
 
       end
     end
-
   end
+
 end
 
 after_initialize do
