@@ -18,7 +18,7 @@ module ::WatchCategory
       "inst-research-cmte" => [ ["closed-groups", "institutional-research-assessment-committee"] ],
       "oclc-cmte" => [ ["closed-groups", "oclc-programs-committee"] ],
       "profdev-cmte" => [ ["closed-groups", "professional-development-committee"] ],
-      "lib-buyers" => [ ["libraries", "buyers-group"] ],
+      "lib-buyers" => [ ["buyers-group"] ],
       "chairs" => [ ["closed-groups", "chairs"] ]
       # "everyone" makes every user watch the listed categories
       # "everyone" => [ "announcements" ]
@@ -26,6 +26,7 @@ module ::WatchCategory
     WatchCategory.change_notification_pref_for_group(groups_cats, :watching)
 
     groups_cats = {
+      "infolit" => [ ["interest-groups", "information-literacy"] ],
       "coordinating-cmte" => [ "announcements" ],
       "representatives" => [ "announcements" ]
     }
