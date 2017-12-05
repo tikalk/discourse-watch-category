@@ -21,7 +21,7 @@ module ::WatchCategory
       "grant-review-cmte" => [ ["closed-groups", "grant-review-cmte"] ],
       "amical2018-joint-org" => [ ["closed-groups", "amical2018-joint-org"] ],
       "dhsi-2018-cohort" => [ ["closed-groups", "dhsi-2018-cohort"] ],
-      "chairs" => [ ["closed-groups", "chairs"] ]
+      "chairs" => [ ["closed-groups", "chairs"] ],
       "lib-buyers" => [ ["buyers-group"] ]
       # "everyone" makes every user watch the listed categories
       # "everyone" => [ "announcements" ]
