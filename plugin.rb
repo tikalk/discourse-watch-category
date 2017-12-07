@@ -19,7 +19,8 @@ module ::WatchCategory
       "oclc-cmte" => [ ["closed-groups", "oclc-programs-committee"] ],
       "profdev-cmte" => [ ["closed-groups", "professional-development-committee"] ],
       "grant-review-cmte" => [ ["closed-groups", "grant-review-cmte"] ],
-      "amical2018-joint-org" => [ ["closed-groups", "amical2018-joint-org"] ],
+      "amical-2018-joint-org" => [ ["closed-groups", "amical-2018-joint-org"] ],
+      "amical-2018-program-cmte" => [ ["closed-groups", "amical-2018-program-cmte"] ],
       "dhsi-2018-cohort" => [ ["closed-groups", "dhsi-2018-cohort"] ],
       "chairs" => [ ["closed-groups", "chairs"] ],
       "lib-buyers" => [ ["buyers-group"] ]
