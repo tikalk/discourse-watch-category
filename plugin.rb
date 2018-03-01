@@ -74,7 +74,7 @@ end
 after_initialize do
   module ::WatchCategory
     class WatchCategoryJob < ::Jobs::Scheduled
-      every 6.hours
+      every 1.hours
 
       def execute(args)
         WatchCategory.watch_category!
