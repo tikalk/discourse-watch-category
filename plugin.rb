@@ -33,6 +33,7 @@ module ::WatchCategory
     groups_cats = {
       "infolit" => [ ["interest-groups", "information-literacy"] ],
       "pedagogy" => [ ["interest-groups", "pedagogy"] ],
+      "digital-literacy" => [ ["interest-groups", "digital-literacy"] ],
       "coordinating-cmte" => [ "announcements" ],
       "representatives" => [ "announcements" ]
     }
