@@ -23,8 +23,7 @@ module ::WatchCategory
       "amical-2018-program-cmte" => [ ["private", "amical-2018-program-cmte"] ],
       "dhsi-2018-cohort" => [ ["private", "dhsi-2018-cohort"] ],
       "chairs" => [ ["private", "chairs"] ],
-      "facdevcenters" => [ ["private", "facdevcenters"] ],
-      "lib-buyers" => [ ["buyers-group"] ]
+      "facdevcenters" => [ ["private", "facdevcenters"] ]
       # "everyone" makes every user watch the listed categories
       # "everyone" => [ "announcements" ]
     }
@@ -35,7 +34,8 @@ module ::WatchCategory
       "pedagogy" => [ ["interest-groups", "pedagogy"] ],
       "digital-literacy" => [ ["interest-groups", "digital-literacy"] ],
       "coordinating-cmte" => [ "announcements" ],
-      "representatives" => [ "announcements" ]
+      "representatives" => [ "announcements" ],
+      "lib-buyers" => [ ["buyers-group"] ]
     }
     WatchCategory.change_notification_pref_for_group(groups_cats, :watching_first_post)
   end
