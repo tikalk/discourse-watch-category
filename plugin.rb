@@ -35,7 +35,7 @@ module ::WatchCategory
       "digital-literacy" => [ ["interest-groups", "digital-literacy"] ],
       "coordinating-cmte" => [ "announcements" ],
       "representatives" => [ "announcements" ],
-      "lib-buyers" => [ ["buyers-group"] ]
+      "lib-buyers" => [ ["private", "buyers-group"] ]
     }
     WatchCategory.change_notification_pref_for_group(groups_cats, :watching_first_post)
   end
