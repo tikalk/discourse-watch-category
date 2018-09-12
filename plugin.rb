@@ -21,6 +21,8 @@ module ::WatchCategory
       "grant-review-cmte" => [ ["private", "grant-review-cmte"] ],
       "amical-2018-joint-org" => [ ["private", "amical-2018-joint-org"] ],
       "amical-2018-program-cmte" => [ ["private", "amical-2018-program-cmte"] ],
+      "amical-2019-joint-org" => [ ["private", "amical-2019-joint-org"] ],
+      "amical-2019-program-cmte" => [ ["private", "amical-2019-program-cmte"] ],
       "dhsi-2018-cohort" => [ ["private", "dhsi-2018-cohort"] ],
       "chairs" => [ ["private", "chairs"] ],
       "facdevcenters" => [ ["private", "facdevcenters"] ]
