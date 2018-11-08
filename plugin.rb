@@ -13,7 +13,7 @@ module ::WatchCategory
       "digcol-cmte" => [ ["private", "digital-collections-committee"] ],
       "digped-cmte" => [ ["private", "digital-pedagogy-committee"] ],
       "digschol-cmte" => [ ["private", "digital-scholarship-committee"] ],
-      "eresources-cmte" => [ ["private", "e-resources-committee"], ["libraries", "buyers-group"] ],
+      "eresources-cmte" => [ ["private", "e-resources-committee"], ["private", "buyers-group"] ],
       "infolit-cmte" => [ ["private", "information-literacy-committee"] ],
       "inst-research-cmte" => [ ["private", "institutional-research-assessment-committee"] ],
       "oclc-cmte" => [ ["private", "oclc-programs-committee"] ],
