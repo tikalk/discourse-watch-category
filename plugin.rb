@@ -9,38 +9,26 @@ module ::WatchCategory
   def self.watch_category!
     groups_cats = {
       # "group" => ["category", "another-top-level-category", ["parent-category", "sub-category"] ],
-      "coordinating-cmte" => [ ["private", "coordinating-committee"] ],
-      "digcol-cmte" => [ ["private", "digital-collections-committee"] ],
-      "digped-cmte" => [ ["private", "digital-pedagogy-committee"] ],
-      "digschol-cmte" => [ ["private", "digital-scholarship-committee"] ],
-      "eresources-cmte" => [ ["private", "e-resources-committee"], ["private", "buyers-group"] ],
-      "infolit-cmte" => [ ["private", "information-literacy-committee"] ],
-      "inst-research-cmte" => [ ["private", "institutional-research-assessment-committee"] ],
-      "oclc-cmte" => [ ["private", "oclc-programs-committee"] ],
-      "profdev-cmte" => [ ["private", "professional-development-committee"] ],
-      "grant-review-cmte" => [ ["private", "grant-review-cmte"] ],
-      "amical-2018-joint-org" => [ ["private", "amical-2018-joint-org"] ],
-      "amical-2018-program-cmte" => [ ["private", "amical-2018-program-cmte"] ],
-      "amical-2019-joint-org" => [ ["private", "amical-2019-joint-org"] ],
-      "amical-2019-program-cmte" => [ ["private", "amical-2019-program-cmte"] ],
-      "dhsi-2018-cohort" => [ ["private", "dhsi-2018-cohort"] ],
-      "chairs" => [ ["private", "chairs"] ],
-      "facdevcenters" => [ ["private", "facdevcenters"] ]
+      "gl_backend" => [ "group-leaders", ["group-leaders", "gls-backend"] ],
+      "gl_devops" => [ "group-leaders", ["group-leaders", "gls-devops"] ],
+      "gl_frontend" => [ "group-leaders", ["group-leaders", "gls-frontend"] ],
+      "gl_mobile" => [ "group-leaders", ["group-leaders", "gls-mobile"] ],
+      "mgmt_admin" => [ "management" ],
+      "mgmt_finance" => [ ["management", "finance"] ],
+      "mgmt_hr" => [ ["management", "hr"] ],
+      "mgmt_sales" => [ ["management", "sales"] ],
+      "tech_circle_backend" => [ "tech-circle", ["tech-circle", "backend-tech-circle"] ],
+      "tech_circle_devops" => [ "tech-circle", ["tech-circle", "devops-tech-circle"] ],
+      "tech_circle_frontend" => "tech-circle", [ ["tech-circle", "frontent-tech-circle"] ],
+      "tech_circle_mobile" => [ "tech-circle", ["tech-circle", "mobile-tech-circle"] ],
+      "tech_group_backend" => [ "technology-groups", ["technology-groups", "backend"] ],
+      "tech_group_devops" => [ "technology-groups", ["technology-groups", "devops"] ],
+      "tech_group_frontend" => [ "technology-groups", ["technology-groups", "frontend"] ],
+      "tech_group_mobile" => [ "technology-groups", ["technology-groups", "mobile"] ],
       # "everyone" makes every user watch the listed categories
-      # "everyone" => [ "announcements" ]
+      "everyone" => [ "management" ]
     }
     WatchCategory.change_notification_pref_for_group(groups_cats, :watching)
-
-    groups_cats = {
-      "infolit" => [ ["interest-groups", "information-literacy"] ],
-      "pedagogy" => [ ["interest-groups", "pedagogy"] ],
-      "open-source-library-systems" => [ ["interest-groups", "open-source-library-systems"] ],
-      "digital-literacy" => [ ["interest-groups", "digital-literacy"] ],
-      "coordinating-cmte" => [ "announcements" ],
-      "representatives" => [ "announcements" ],
-      "lib-buyers" => [ ["private", "buyers-group"] ]
-    }
-    WatchCategory.change_notification_pref_for_group(groups_cats, :watching_first_post)
   end
 
   def self.change_notification_pref_for_group(groups_cats, pref)
