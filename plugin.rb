@@ -19,7 +19,7 @@ module ::WatchCategory
       "mgmt_sales" => [ ["management", "sales"] ],
       "tech_circle_backend" => [ "tech-circle", ["tech-circle", "backend-tech-circle"] ],
       "tech_circle_devops" => [ "tech-circle", ["tech-circle", "devops-tech-circle"] ],
-      "tech_circle_frontend" => "tech-circle", [ ["tech-circle", "frontent-tech-circle"] ],
+      "tech_circle_frontend" => [ "tech-circle", ["tech-circle", "frontent-tech-circle"] ],
       "tech_circle_mobile" => [ "tech-circle", ["tech-circle", "mobile-tech-circle"] ],
       "tech_group_backend" => [ "technology-groups", ["technology-groups", "backend"] ],
       "tech_group_devops" => [ "technology-groups", ["technology-groups", "devops"] ],
