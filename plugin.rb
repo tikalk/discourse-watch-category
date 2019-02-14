@@ -21,10 +21,12 @@ module ::WatchCategory
       "tech_circle_devops" => [ "tech-circle", ["tech-circle", "devops-tech-circle"] ],
       "tech_circle_frontend" => [ "tech-circle", ["tech-circle", "frontent-tech-circle"] ],
       "tech_circle_mobile" => [ "tech-circle", ["tech-circle", "mobile-tech-circle"] ],
+      "tech_circle_leaders" => [ ["management", "tech-circle-leaders"] ],
       "tech_group_backend" => [ "technology-groups", ["technology-groups", "backend"] ],
       "tech_group_devops" => [ "technology-groups", ["technology-groups", "devops"] ],
       "tech_group_frontend" => [ "technology-groups", ["technology-groups", "frontend"] ],
       "tech_group_mobile" => [ "technology-groups", ["technology-groups", "mobile"] ],
+      "tech_group_leaders" => [ ["management", "group-routine-leaders"] ],
       # "everyone" makes every user watch the listed categories
       "everyone" => [ "management" ]
     }
