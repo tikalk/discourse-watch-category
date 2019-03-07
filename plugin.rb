@@ -1,6 +1,6 @@
 # name: Watch Category
 # about: Watches a category for all the users in a particular group
-# version: 0.7
+# version: 0.8
 # authors: Arpit Jalan
 # maintainer: Yoav Nordmann
 # url: https://github.com/tikalk/discourse-watch-category
@@ -84,11 +84,11 @@ module ::WatchCategory
         unless tag.nil? || group.nil?
           if group_name == "everyone"
             User.all.each do |user|
-              TagUser.change(user, tag, pref)
+              TagUser.change(user, tag, TagUser.notification_levels[pref])
             end
           else
             group.users.each do |user|
-              TagUser.change(user, tag, pref)
+              TagUser.change(user, tag, TagUser.notification_levels[pref])
             end
           end
         end
