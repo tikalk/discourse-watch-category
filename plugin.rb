@@ -1,6 +1,6 @@
 # name: Watch Category
 # about: Watches a category for all the users in a particular group
-# version: 0.4
+# version: 0.5
 # authors: Arpit Jalan
 # maintainer: Yoav Nordmann
 # url: https://github.com/tikalk/discourse-watch-category
@@ -31,10 +31,20 @@ module ::WatchCategory
       # "everyone" makes every user watch the listed categories
       "everyone" => [ "management" ]
     }
-    WatchCategory.change_notification_pref_for_group(groups_cats, :watching)
+    WatchCategory.change_category_notification_pref_for_group(groups_cats, :watching)
+
+    groups_tags = {
+      # "group" => ["tag", "tag" ],
+      "tech_group_backend" => [ "backend" ],
+      "tech_group_devops" => [ "devops" ],
+      "tech_group_frontend" => [ "frontend" ],
+      "tech_group_mobile" => [ "mobile" ]
+    }
+    WatchCategory.change_tag_notification_pref_for_group(groups_tags, :watching)
+
   end
 
-  def self.change_notification_pref_for_group(groups_cats, pref)
+  def self.change_category_notification_pref_for_group(groups_cats, pref)
     groups_cats.each do |group_name, cats|
       cats.each do |cat_slug|
 
@@ -63,6 +73,25 @@ module ::WatchCategory
       end
     end
   end
+
+  def self.change_tag_notification_pref_for_group(group_tags, pref)
+    group_tags.each do |group_name, tags|
+      tags ||= []
+      group = Group.find_by_name(group_name)
+
+      unless tags.empty? || group.nil?
+        if group_name == "everyone"
+          User.all.each do |user|
+            TagUser.batch_set(user, pref, tags)
+          end
+        else
+          group.users.each do |user|
+            TagUser.batch_set(user, pref, tags)
+          end
+        end
+      end
+    end
+  end 
 
 end
 
